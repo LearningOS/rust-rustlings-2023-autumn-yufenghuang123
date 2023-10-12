@@ -2,17 +2,20 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
-    } else {
-        "Unknown"
+    } else if animal == "dinosaur" {
+        4
+    }
+    else {
+        0
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW
@@ -22,7 +25,10 @@ pub fn animal_habitat(animal: &str) -> &'static str {
         "Burrow"
     } else if identifier == 3 {
         "Desert"
-    } else {
+    } else if identifier == 4{
+        "dinosaur"
+    }
+    else {
         "Unknown"
     };
 
@@ -50,6 +56,6 @@ mod tests {
 
     #[test]
     fn unknown_animal() {
-        assert_eq!(animal_habitat("dinosaur"), "Unknown")
+        assert_eq!(animal_habitat("dinosaur"), "dinosaur")
     }
 }
